@@ -111,7 +111,10 @@ TYPER.prototype = {
       typerGame.player.time -= 1;
       typerGame.word.Draw();
       console.log(typerGame.player.time);
-
+      if (typerGame.player.time <= 0) {
+        alert("Game over!");
+        window.location = "home.html";
+      }
     }, 1000);
     //this.player.time -= 1;
     //this.word.Draw();
@@ -170,7 +173,7 @@ TYPER.prototype = {
 			if(this.word.left.length === 0){
 
 				this.guessed_words += 1;
-        this.player.time += 5;
+        this.player.time += 2;
 
                 //update player score
                 this.player.score = this.player.score + 1;
