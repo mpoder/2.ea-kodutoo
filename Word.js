@@ -27,7 +27,8 @@ Word.prototype = {
     this.ctx.fillStyle = "white";
     this.ctx.font = "30px Open Sans";
     this.ctx.textAlign = "left";
-    this.ctx.fillText(typerGame.player.score,10,30);
+    this.ctx.fillText("Skoor: " + typerGame.player.score,10,30);
+    this.ctx.fillText("Aeg: " + typerGame.player.time,10,55);
 		// Canvasele joonistamine
 		this.ctx.textAlign = 'center';
 		this.ctx.font = '70px Open Sans';

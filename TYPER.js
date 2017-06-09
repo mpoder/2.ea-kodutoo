@@ -19,7 +19,7 @@ var TYPER = function(){
 	this.guessed_words = 0; // arvatud sõnade arv
 
 	//mängija objekt, hoiame nime ja skoori
-	this.player = {name: null, score: 0};
+	this.player = {name: null, score: 0, time: 30};
 
 	this.init();
 };
@@ -106,6 +106,19 @@ TYPER.prototype = {
 		xmlhttp.send();
 	},
 
+  loop: function() {
+    var counter = setInterval(function() {
+      typerGame.player.time -= 1;
+      typerGame.word.Draw();
+      console.log(typerGame.player.time);
+
+    }, 1000);
+    //this.player.time -= 1;
+    //this.word.Draw();
+    console.log(this.player.time);
+
+  },
+
 	start: function(){
 		// Tekitame sõna objekti Word
 		this.generateWord();
@@ -116,8 +129,11 @@ TYPER.prototype = {
 
 		// Kuulame klahvivajutusi
 		window.addEventListener('keypress', this.keyPressed.bind(this));
+    this.loop();
 
 	},
+
+
 
     generateWord: function(){
 
@@ -154,6 +170,7 @@ TYPER.prototype = {
 			if(this.word.left.length === 0){
 
 				this.guessed_words += 1;
+        this.player.time += 5;
 
                 //update player score
                 this.player.score = this.player.score + 1;
@@ -168,8 +185,11 @@ TYPER.prototype = {
       this.player.score = this.player.score - 1;
       flashBackground = true;
       this.word.Draw();
+      if (this.player.score < 0) {
+        localStorage.currentPlayer = this.player;
+        alert("Game over!\nYour score: " + this.guessed_words);
+      }
     }
-
 	} // keypress end
 
 };
