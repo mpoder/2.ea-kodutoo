@@ -1,5 +1,7 @@
 // highs.js - High score and scoreboard implementation test
 var highScores = []; // high score array for scoreEntry objects
+// highScore format:
+//  [userName, userScore, userName, userScore]
 
 class scoreEntry {
   constructor(playerName, highScore, guessedWords) {
