@@ -112,8 +112,7 @@ TYPER.prototype = {
       typerGame.word.Draw();
       console.log(typerGame.player.time);
       if (typerGame.player.time <= 0) {
-        alert("Game over!");
-        window.location = "home.html";
+        this.gameOver();
       }
     }, 1000);
     //this.player.time -= 1;
@@ -189,11 +188,17 @@ TYPER.prototype = {
       flashBackground = true;
       this.word.Draw();
       if (this.player.score < 0) {
-        localStorage.currentPlayer = this.player;
-        alert("Game over!\nYour score: " + this.guessed_words);
+        this.gameOver();
       }
     }
-	} // keypress end
+	}, // keypress end
+
+  gameOver: function() {
+    localStorage.currentPlayer = this.player;
+    alert("Mäng läbi!\nSinu arvatud sõnad: " + this.guessed_words + "\nSinu skoor: " + this.player.score);
+    sessionStorage.currentPlayerData = "";
+    window.location = "home.html";
+  }
 
 };
 
