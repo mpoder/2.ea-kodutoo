@@ -8,3 +8,14 @@ function toggleDescription() {
       desciptionState = false;
     }
 }
+
+var scoreState = false;
+function toggleScore() {
+    if (scoreState == false) {
+      document.getElementById("scoreList").style.display = "block";
+      scoreState = true;
+    } else {
+      document.getElementById("scoreList").style.display = "none";
+      scoreState = false;
+    }
+}

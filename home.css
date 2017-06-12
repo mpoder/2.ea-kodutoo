@@ -3,17 +3,18 @@
 body {
   background-color: #e8f9b8;
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
 button {
   background-color: #e8f9b8;
   border: 2px solid #8af58a;
   border-radius: 10px;
-  color: #999999;
+  color: #085e08;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 25px;
   margin: 4px 2px;
   cursor: pointer;
   -webkit-transition-duration: 0.5s; /* Safari */
@@ -29,6 +30,10 @@ button:hover {
   display: none;
 }
 
+#scoreList {
+  display: none;
+}
+
 div {
   display: block;
   margin: auto;
@@ -41,4 +46,19 @@ header {
   float: left;
   text-align: center;
   height: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 600px;
+}
+
+td, th {
+  border: 1px solid #8af58a;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #effbd0;
 }

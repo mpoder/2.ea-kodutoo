@@ -9,8 +9,9 @@
   </head>
   <body>
     <header>
-      <button type="button" id="descr" onclick="toggleDescription()">Reeglid</button>
       <button type="button" onclick="window.location='typer.html'">Alusta mängimist</button>
+      <button type="button" id="descr" onclick="toggleDescription()">Reeglid</button>
+      <button type="button" id ="scores" onclick="toggleScore()">Skoor</button>
     </header>
     <div>
       <div id="description">
@@ -19,7 +20,22 @@
         <p>Aega on 30 sekundit, kuid iga õigesti trükitud sõna eest lisandub jooksvale ajale +5 sekundit.</p>
         <p>Iga õigesti trükitud terve SÕNA eest saad ühe punkti.</p>
         <p>Iga valesti trükitud ühe TÄHE puhul kaotad ühe punkti oma koguskoorist.</p>
+        <p>Kui sinu skoor läheb alla 0 punkti, lõpeb mäng automaatselt.</p>
       </div>
+    </div>
+    <div id="scoreList">
+      <table>
+        <tr>
+          <th>Nimi</th>
+          <th>Rekord</th>
+          <th>Arvatud sõnade arv</th>
+        </tr>
+        <tr id="ScoreData">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
