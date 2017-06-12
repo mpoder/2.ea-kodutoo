@@ -65,11 +65,12 @@ function save() {
   document.body.appendChild(newElement);
 }*/
 
-var ScoreDataList = document.getElementById("ScoreData"),
+/*var ScoreDataList = document.getElementById("ScoreData"),
   td = document.createElement("td"),
   clone;
 highScores.forEach(function (name, hscore, gwords) {
   clone = li.cloneNode();
   clone.textContent = name + " " + hscore + " " + gwords;
   ScoreDataList.appendChild(clone);
-}
+};
+*/
