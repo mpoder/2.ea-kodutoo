@@ -1,7 +1,7 @@
 // highs.js - High score and scoreboard implementation test
 var highScores = []; // high score array for scoreEntry objects
 // highScore format:
-//  [userName, userScore, userName, userScore]
+//  [scoreEntry, scoreEntry, scoreEntry, ...]
 
 class scoreEntry {
   constructor(playerName, highScore, guessedWords) {
@@ -40,10 +40,12 @@ function CSVAutoTest() {
   return true;
 }
 
-CSVAutoTest();
+//CSVAutoTest();
 
 function checkStorage() {
   // checks if the storage is in the standard form for this Typer
+  var playerNames = localStorage.getItem("playerNames");
+  var playerScores = localStorage.getItem("playerScores");
 }
 
 function populate() {
