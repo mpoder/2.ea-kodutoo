@@ -26,8 +26,16 @@ if (localStorage.getItem("allScores")) {
 
 if (localStorage.getItem("currentPlayer") !== "") {
   var tempPlayer = JSON.parse(localStorage.getItem("currentPlayer"));
-  tempclass = new scoreEntry(tempPlayer.name, tempPlayer.hscore, 0);
+  tempclass = new scoreEntry(tempPlayer.name, tempPlayer.score, tempPlayer.guessed_words);
   highScores.push(tempclass);
   localStorage.setItem("currentPlayer", "");
   localStorage.setItem("allScores", JSON.stringify(highScores));
+}
+
+function getName(arrayID) {
+  return highScores[arrayID].name;
+}
+
+function getScore(arrayID) {
+  return highScores[arrayID].hscore;
 }

@@ -172,6 +172,7 @@ TYPER.prototype = {
 			if(this.word.left.length === 0){
 
 				this.guessed_words += 1;
+        this.player.guessed_words += 1;
         this.player.time += 2;
 
                 //update player score
