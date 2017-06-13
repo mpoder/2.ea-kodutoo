@@ -195,6 +195,7 @@ TYPER.prototype = {
 	}, // keypress end
 
   gameOver: function() {
+    this.player.guessed_words = this.guessed_words;
     localStorage.setItem("currentPlayer", JSON.stringify(this.player));
     alert("Mäng läbi!\nSinu arvatud sõnad: " + this.guessed_words + "\nSinu skoor: " + this.player.score);
     sessionStorage.setItem("currentPlayerData", "");
