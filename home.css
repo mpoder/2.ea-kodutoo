@@ -64,3 +64,21 @@ td, th {
 tr:nth-child(even) {
   background-color: #effbd0;
 }
+
+#typer {
+  color: #085e08;
+  -webkit-animation-name: changeColors;
+  -webkit-animation-duration: 10s;
+  animation-name: changeColors;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  font-size: 75px;
+}
+
+@keyframes changeColors {
+  0% {color: #085e08;}
+  25% {color: #0099cc;}
+  50% {color: #cc00ff;}
+  75% {color: #ff9933;}
+  100% {color: #085e08;}
+}
