@@ -13,6 +13,7 @@ var scoreState = false;
 function toggleScore() {
     if (scoreState === false) {
       document.getElementById("scoreList").style.display = "block";
+      populateTable();
       scoreState = true;
     } else {
       document.getElementById("scoreList").style.display = "none";
@@ -30,6 +31,12 @@ if (localStorage.getItem("currentPlayer") !== "") {
   highScores.push(tempclass);
   localStorage.setItem("currentPlayer", "");
   localStorage.setItem("allScores", JSON.stringify(highScores));
+}
+
+function populateTable() {
+  for (var cnt = 0; cnt < highScores.length; cnt++)
+  document.getElementById("ScoreData").innerHTML += "<tr><td>" + highScores[cnt].name + "</td><td>" + highScores[cnt].hscore + "</td><td></td></tr>";
+
 }
 
 function getName(arrayID) {
